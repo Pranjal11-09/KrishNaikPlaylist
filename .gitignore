@@ -148,6 +148,9 @@ activemq-data/
 *.sage.py
 
 # Environments
+.artifact/ 
+# .artifact      # ignores file ".artifact" AND/OR folder ".artifact/"
+# .artifact/     # ignores ONLY the folder ".artifact/" (not a same-named file)
 .env
 .envrc
 .venv
