@@ -8,6 +8,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 @dataclass 
 # if we are only defining variables in a class then we can use dataclass decorator to avoid writing init method
 class DataIngestionConfig:
@@ -54,3 +57,7 @@ if __name__ == "__main__":
 
     data_transformation = DataTransformation()
     train_arr, test_arr, preprocessor_path = data_transformation.initiate_data_transformation(train_path, test_path)
+
+    model_trainer = ModelTrainer()
+    r2_square = model_trainer.initiate_model_trainer(train_arr, test_arr)
+    print(f"R2 square value: {r2_square}")
